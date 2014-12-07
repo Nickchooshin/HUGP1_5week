@@ -42,6 +42,36 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="SampleScene.cpp" />
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Scene\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptQueueManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Wait.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Say.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -91,6 +121,39 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="SampleScene.h" />
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Scene\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptQueueManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand.h">
+      <Filter>ScriptCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Wait.h">
+      <Filter>ScriptCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Say.h">
+      <Filter>ScriptCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogist.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -119,6 +182,24 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{09e25e2d-2eaa-43b0-b1ef-6b3f56621ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\TitleScene">
+      <UniqueIdentifier>{c186dd49-652b-4334-96aa-ae0b15b46a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{081b0d9e-4aa4-4109-b40c-2bc01c33eabe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\GameScene">
+      <UniqueIdentifier>{3f75181e-b079-458a-8482-7aedc6838196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{568c1521-f434-4eee-8957-98d92044d0ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand">
+      <UniqueIdentifier>{8ece2ab4-b216-4ba6-a319-8d3010e641a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{d23cf678-51ea-4602-9082-76c5168974e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
