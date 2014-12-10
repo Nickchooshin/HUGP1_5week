@@ -1,0 +1,8 @@
+wait 1.5
+say driver sample_2
+wait 1.5
+say guest sample_1
+wait 1
+say driver sample_4
+wait 3
+say guest sample_3

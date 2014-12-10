@@ -14,7 +14,7 @@ CScriptCommand_Say::CScriptCommand_Say(char *text, Dialogist dialogist) : m_cTex
 CScriptCommand_Say::~CScriptCommand_Say()
 {
 	if(m_cText!=NULL)
-		delete m_cText ;
+		delete []m_cText ;
 }
 
 void CScriptCommand_Say::Update()

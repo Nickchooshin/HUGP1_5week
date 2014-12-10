@@ -72,6 +72,12 @@
     <ClCompile Include="DialogManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptCommand_Load.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Choice.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -153,6 +159,12 @@
     </ClInclude>
     <ClInclude Include="Dialogist.h">
       <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Load.h">
+      <Filter>ScriptCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Choice.h">
+      <Filter>ScriptCommand</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

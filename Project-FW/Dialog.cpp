@@ -7,13 +7,14 @@ CDialog::CDialog() : m_pDialog(NULL),
 }
 CDialog::~CDialog()
 {
+	if(m_pDialog!=NULL)
+		delete m_pDialog ;
 }
 
-void CDialog::Init(char *filename, Dialogist dialogist)
+void CDialog::Init(char *text, Dialogist dialogist)
 {
-	char temp[100] ;
-	strcpy(temp, filename) ;
-	wsprintf(filename, "Resource/Image/%s.png", temp) ;
+	char filename[100] ;
+	wsprintf(filename, "Resource/Image/%s.png", text) ;
 
 	m_pDialog = new CSprite ;
 	m_pDialog->Init(filename) ;

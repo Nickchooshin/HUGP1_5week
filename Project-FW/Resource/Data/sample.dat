@@ -6,3 +6,4 @@ wait 1
 say driver sample_3
 wait 3
 say guest sample_4
+load sample_1

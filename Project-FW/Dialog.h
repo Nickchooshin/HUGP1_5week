@@ -14,7 +14,7 @@ public :
 	CDialog() ;
 	~CDialog() ;
 
-	void Init(char *filename, Dialogist dialogist) ;
+	void Init(char *text, Dialogist dialogist) ;
 
 	void SetAlpha(int nAlpha) ;
 

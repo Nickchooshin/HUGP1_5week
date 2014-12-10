@@ -7,7 +7,7 @@ protected :
 
 public :
 	CScriptCommand() ;
-	~CScriptCommand() ;
+	virtual ~CScriptCommand() ;
 
 	virtual void Update() = 0 ;
 

@@ -18,6 +18,8 @@ public :
 
 	bool LoadScript(char *filename) ;
 
+	void ClearQueue() ;
+
 	void Update() ;
 } ;
 

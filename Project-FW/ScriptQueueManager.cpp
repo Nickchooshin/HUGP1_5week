@@ -6,6 +6,8 @@
 #include "ScriptCommand.h"
 #include "ScriptCommand_Wait.h"
 #include "ScriptCommand_Say.h"
+#include "ScriptCommand_Choice.h"
+#include "ScriptCommand_Load.h"
 
 CScriptQueueManager::CScriptQueueManager() : m_pNowCommand(NULL),
 											 m_bQueueEnd(true)
@@ -13,14 +15,7 @@ CScriptQueueManager::CScriptQueueManager() : m_pNowCommand(NULL),
 }
 CScriptQueueManager::~CScriptQueueManager()
 {
-	CScriptCommand *temp ;
-
-	while(!m_CommandQueue.empty())
-	{
-		temp = m_CommandQueue.front() ;
-		m_CommandQueue.pop() ;
-		delete temp ;
-	}
+	ClearQueue() ;
 
 	if(m_pNowCommand!=NULL)
 		delete m_pNowCommand ;
@@ -69,20 +64,41 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		}
 		else if(len==6 && strcmp(command, "CHOICE")==0)
 		{
+			CScriptCommand *pCommand = new CScriptCommand_Choice() ;
+			m_CommandQueue.push(pCommand) ;
 		}
 		else if(len==4 && strcmp(command, "LOAD")==0)
 		{
+			g_LoadManager->GetString(temp) ;
+
+			CScriptCommand *pCommand = new CScriptCommand_Load(temp) ;
+			m_CommandQueue.push(pCommand) ;
 		}
 	}
 
 	g_LoadManager->CloseDat() ;
 
-	m_pNowCommand = m_CommandQueue.front() ;
-	m_CommandQueue.pop() ;
+	if(m_pNowCommand==NULL)
+	{
+		m_pNowCommand = m_CommandQueue.front() ;
+		m_CommandQueue.pop() ;
+	}
 
 	m_bQueueEnd = false ;
 
 	return true ;
+}
+
+void CScriptQueueManager::ClearQueue()
+{
+	CScriptCommand *temp ;
+
+	while(!m_CommandQueue.empty())
+	{
+		temp = m_CommandQueue.front() ;
+		m_CommandQueue.pop() ;
+		delete temp ;
+	}
 }
 
 void CScriptQueueManager::Update()
