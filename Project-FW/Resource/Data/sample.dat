@@ -1,9 +1,9 @@
 wait 1.5
-say driver sample_1
+say "driver" "sample_1"
 wait 1.5
-say guest sample_2
+say "guest" "sample_2"
 wait 1
-say driver sample_3
+say "driver" "sample_3"
 wait 3
-say guest sample_4
-load sample_1
+say "guest" "sample_4"
+load "sample_1"

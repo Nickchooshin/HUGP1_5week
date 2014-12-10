@@ -38,8 +38,7 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		{
 			float sec ;
 
-			g_LoadManager->GetString(temp) ;
-			sec = (float)strtod(temp, NULL) ;
+			g_LoadManager->GetValue(sec) ;
 
 			CScriptCommand *pCommand = new CScriptCommand_Wait(sec) ;
 			m_CommandQueue.push(pCommand) ;
