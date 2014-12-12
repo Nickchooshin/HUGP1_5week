@@ -23,7 +23,7 @@ CButton::~CButton()
 		delete m_pSprite ;
 }
 
-void CButton::Init(char *texfile)
+void CButton::Init(const char *texfile)
 {
 	m_pSprite = new CSprite ;
 	m_pSprite->Init(texfile) ;
@@ -36,7 +36,7 @@ void CButton::Init(char *texfile)
 	m_pClickUp = g_MusicManager->LoadMusic("Resource/Sound/Butten_click_up.mp3", false, false) ;
 }
 
-void CButton::Init(float Width, float Height, char *texfile)
+void CButton::Init(float Width, float Height,const  char *texfile)
 {
 	m_pSprite = new CSprite ;
 	m_pSprite->Init(Width, Height, texfile) ;
@@ -90,6 +90,11 @@ void CButton::SetClickUpSound(char *filepath)
 void CButton::SetPutonSound(char *filepath)
 {
 	m_pPuton = g_MusicManager->LoadMusic(filepath, false, false) ;
+}
+
+void CButton::SetAlpha(int nAlpha)
+{
+	m_pSprite->SetAlpha(nAlpha) ;
 }
 
 void CButton::ClickState(int x, int y, bool bClick, bool bPress)

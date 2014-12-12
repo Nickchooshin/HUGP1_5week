@@ -29,7 +29,7 @@ CSprite::~CSprite()
 		m_pIB->Release() ;
 }
 
-bool CSprite::Init(char *texfile)
+bool CSprite::Init(const char *texfile)
 {
 	if(!SetTexture(texfile))
 		return false ;
@@ -43,7 +43,7 @@ bool CSprite::Init(char *texfile)
 	return true ;
 }
 
-bool CSprite::Init(float Width, float Height, char *texfile)
+bool CSprite::Init(float Width, float Height, const char *texfile)
 {
 	m_fWidth = Width ;
 	m_fHeight = Height ;
@@ -273,7 +273,7 @@ HRESULT CSprite::InitVB()
 	return true ;
 }
 
-bool CSprite::SetTexture(char *texfile)
+bool CSprite::SetTexture(const char *texfile)
 {
 	m_pTexture = g_TextureManager->GetTexture(texfile, &m_pTexInfo) ;
 

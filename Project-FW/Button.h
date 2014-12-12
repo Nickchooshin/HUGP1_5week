@@ -21,8 +21,8 @@ public :
 	CButton() ;
 	~CButton() ;
 
-	void Init(char *texfile) ;
-	void Init(float Width, float Height, char *texfile) ;
+	void Init(const char *texfile) ;
+	void Init(float Width, float Height, const char *texfile) ;
 
 	void SetPosition(float fX, float fY) ;
 	void SetIndex(int normalIndex, int putonIndex, int clickIndex, int disableIndex) ;
@@ -32,6 +32,8 @@ public :
 	void SetClickDownSound(char *filepath) ;
 	void SetClickUpSound(char *filepath) ;
 	void SetPutonSound(char *filepath) ;
+
+	void SetAlpha(int nAlpha) ;
 
 	void ClickState(int x, int y, bool bClick, bool bPress) ;
 	const bool BeClick() const ;

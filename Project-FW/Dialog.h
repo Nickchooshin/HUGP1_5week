@@ -4,11 +4,10 @@
 
 class CSprite ;
 
-class CDialog
+class CDialog : public IDialog
 {
 private :
 	CSprite *m_pDialog ;
-	Dialogist m_Dialogist ;
 
 public :
 	CDialog() ;
@@ -16,9 +15,7 @@ public :
 
 	void Init(char *text, Dialogist dialogist) ;
 
-	void SetAlpha(int nAlpha) ;
-
-	const Dialogist GetDialogist() const ;
+	void SetAlpha(float fAlpha) ;
 
 	void Render() ;
 } ;

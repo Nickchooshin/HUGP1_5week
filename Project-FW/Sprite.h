@@ -22,8 +22,8 @@ public :
 	CSprite() ;
 	~CSprite() ;
 
-	bool Init(char *texfile) ;
-	bool Init(float Width, float Height, char *texfile) ;
+	bool Init(const char *texfile) ;
+	bool Init(float Width, float Height, const char *texfile) ;
 
 	void SetPosition(float X, float Y) ;						// ¡¬«•º≥¡§ (¡ﬂæ” ±‚¡ÿ)
 	void SetPositionZ(float Z) ;								// Z√‡ ¡¬«•º≥¡§
@@ -42,7 +42,7 @@ public :
 private :
 	HRESULT InitVB() ;
 
-	bool SetTexture(char *texfile) ;
+	bool SetTexture(const char *texfile) ;
 	void SetupMatrices() ;
 } ;
 

@@ -6,4 +6,7 @@ wait 1
 say "driver" "sample_3"
 wait 3
 say "guest" "sample_4"
+
+choice 2 "good", "bad" / "sample", "sample_1"
+
 load "sample_1"

@@ -78,6 +78,15 @@
     <ClCompile Include="ScriptCommand_Choice.cpp">
       <Filter>ScriptCommand</Filter>
     </ClCompile>
+    <ClCompile Include="ButtonManager.cpp">
+      <Filter>Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog_Choice.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -166,6 +175,15 @@
     <ClInclude Include="ScriptCommand_Choice.h">
       <Filter>ScriptCommand</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Button</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonManager.h">
+      <Filter>Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog_Choice.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -212,6 +230,9 @@
     </Filter>
     <Filter Include="Dialog">
       <UniqueIdentifier>{d23cf678-51ea-4602-9082-76c5168974e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button">
+      <UniqueIdentifier>{d328b188-2be0-4e65-abf1-0dbc34f5f203}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

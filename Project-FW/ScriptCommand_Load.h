@@ -6,7 +6,7 @@
 class CScriptCommand_Load : public CScriptCommand
 {
 private :
-	char *m_cScript ;
+	char *m_strScript ;
 
 public :
 	CScriptCommand_Load(char *script) ;

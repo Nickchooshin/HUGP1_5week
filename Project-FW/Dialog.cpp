@@ -1,8 +1,7 @@
 #include "Dialog.h"
 #include "Sprite.h"
 
-CDialog::CDialog() : m_pDialog(NULL),
-					 m_Dialogist(NONE)
+CDialog::CDialog() : m_pDialog(NULL)
 {
 }
 CDialog::~CDialog()
@@ -33,14 +32,11 @@ void CDialog::Init(char *text, Dialogist dialogist)
 	}
 }
 
-void CDialog::SetAlpha(int nAlpha)
+void CDialog::SetAlpha(float fAlpha)
 {
-	m_pDialog->SetAlpha(nAlpha) ;
-}
+	int nAlpha = (int)(255.0f * fAlpha) ;
 
-const Dialogist CDialog::GetDialogist() const
-{
-	return m_Dialogist ;
+	m_pDialog->SetAlpha(nAlpha) ;
 }
 
 void CDialog::Render()

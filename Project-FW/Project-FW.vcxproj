@@ -77,8 +77,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ButtonManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="Dialog_Choice.cpp" />
     <ClCompile Include="D3dSystem.cpp" />
     <ClCompile Include="Dialog.cpp" />
     <ClCompile Include="DialogManager.cpp" />
@@ -106,8 +109,11 @@
     <ClCompile Include="WinSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="ButtonManager.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="Dialog_Choice.h" />
     <ClInclude Include="D3dSystem.h" />
     <ClInclude Include="D3dDevice.h" />
     <ClInclude Include="Dialog.h" />

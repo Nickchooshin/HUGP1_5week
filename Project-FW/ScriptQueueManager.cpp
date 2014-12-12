@@ -63,8 +63,30 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		}
 		else if(len==6 && strcmp(command, "CHOICE")==0)
 		{
-			CScriptCommand *pCommand = new CScriptCommand_Choice() ;
+			int num ;
+			std::string *pChoice, *pScript ;
+
+			g_LoadManager->GetValue(num) ;
+			pChoice = new std::string[num] ;
+			pScript = new std::string[num] ;
+
+			for(int i=0; i<num; i++)
+			{
+				g_LoadManager->GetString(temp) ;
+				pChoice[i] = temp ;
+			}
+
+			for(int i=0; i<num; i++)
+			{
+				g_LoadManager->GetString(temp) ;
+				pScript[i] = temp ;
+			}
+
+			CScriptCommand *pCommand = new CScriptCommand_Choice(num, pChoice, pScript) ;
 			m_CommandQueue.push(pCommand) ;
+
+			delete[] pChoice ;
+			delete[] pScript ;
 		}
 		else if(len==4 && strcmp(command, "LOAD")==0)
 		{
@@ -72,6 +94,12 @@ bool CScriptQueueManager::LoadScript(char *filename)
 
 			CScriptCommand *pCommand = new CScriptCommand_Load(temp) ;
 			m_CommandQueue.push(pCommand) ;
+		}
+		else if(len==3 && strcmp(command, "ANI")==0)
+		{
+		}
+		else if(len==5 && strcmp(command, "SOUND")==0)
+		{
 		}
 	}
 

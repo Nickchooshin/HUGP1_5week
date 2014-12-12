@@ -32,7 +32,7 @@ void CScriptCommand_Say::Update()
 			m_State = DIALOG_FADEIN ;
 		}
 	}
-	else if(m_State==DIALOG_FADEIN)
+	else
 	{
 		if( g_DialogManager->DialogFadeIn(m_Dialogist) )
 			m_bLife = false ;

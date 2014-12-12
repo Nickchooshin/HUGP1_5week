@@ -1,5 +1,4 @@
 #include "DialogManager.h"
-#include "Dialog.h"
 
 #include "D3dDevice.h"
 
@@ -17,8 +16,8 @@ CDialogManager::~CDialogManager()
 
 bool CDialogManager::DialogFadeOut(Dialogist dialogist)
 {
-	CDialog *pDialog ;
-	int nAlpha = 255 - (int)((m_fTime / 0.5f) * 255.0f) ;
+	IDialog *pDialog ;
+	float fAlpha = 1.0f - (m_fTime / 0.5f) ;
 
 	if(dialogist==GUEST)
 		pDialog = m_pGuest ;
@@ -30,14 +29,14 @@ bool CDialogManager::DialogFadeOut(Dialogist dialogist)
 		return true ;
 	//
 
-	if(nAlpha<0)
+	if(fAlpha<=0.0f)
 	{
-		pDialog->SetAlpha(0) ;
+		pDialog->SetAlpha(0.0f) ;
 		m_fTime = 0.0f ;
 		return true ;
 	}
 	else
-		pDialog->SetAlpha(nAlpha) ;
+		pDialog->SetAlpha(fAlpha) ;
 
 	m_fTime += g_D3dDevice->GetTime() ;
 
@@ -46,31 +45,31 @@ bool CDialogManager::DialogFadeOut(Dialogist dialogist)
 
 bool CDialogManager::DialogFadeIn(Dialogist dialogist)
 {
-	CDialog *pDialog ;
-	int nAlpha = (int)((m_fTime / 0.5f) * 255.0f) ;
+	IDialog *pDialog ;
+	float fAlpha = (m_fTime / 0.5f) ;
 
 	if(dialogist==GUEST)
 		pDialog = m_pGuest ;
 	else if(dialogist==DRIVER)
 		pDialog = m_pDriver ;
 
-	if(nAlpha>255)
+	if(fAlpha>=1.0f)
 	{
-		pDialog->SetAlpha(255) ;
+		pDialog->SetAlpha(1.0f) ;
 		m_fTime = 0.0f ;
 		return true ;
 	}
 	else
-		pDialog->SetAlpha(nAlpha) ;
+		pDialog->SetAlpha(fAlpha) ;
 
 	m_fTime += g_D3dDevice->GetTime() ;
 
 	return false ;
 }
 
-void CDialogManager::ChangeDialog(CDialog *dialog)
+void CDialogManager::ChangeDialog(IDialog *dialog)
 {
-	CDialog **pDialog ;
+	IDialog **pDialog ;
 	Dialogist dialogist = dialog->GetDialogist() ;
 
 	if(dialogist==GUEST)
