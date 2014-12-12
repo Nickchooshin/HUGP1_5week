@@ -13,21 +13,15 @@
 
 #include "ScriptQueueManager.h"
 #include "DialogManager.h"
+#include "DialogistAniManager.h"
 
-//
-#include "Objects_Ani.h"
-
-GameScene::GameScene() : m_pBackground(NULL),
-	m_pGuest(NULL)
+GameScene::GameScene() : m_pBackground(NULL)
 {
 }
 GameScene::~GameScene()
 {
 	if(m_pBackground!=NULL)
 		delete m_pBackground ;
-
-	if(m_pGuest!=NULL)
-		delete m_pGuest ;
 }
 
 Scene* GameScene::scene()
@@ -45,10 +39,6 @@ void GameScene::Init()
 	float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
 	g_ScriptQueueManager->LoadScript("Resource/Data/sample.dat") ;
-
-	m_pGuest = new CObjects_Ani ;
-	m_pGuest->Init("Resource/Data/NPC/npc_body1.dat") ;
-	m_pGuest->SetPosition(100, 500) ;
 }
 
 void GameScene::Destroy()
@@ -64,7 +54,7 @@ void GameScene::Update(float dt)
 
 	g_ScriptQueueManager->Update() ;
 
-	m_pGuest->Update() ;
+	g_DialogistAniManager->Update() ;
 }
 
 void GameScene::Render()
@@ -73,5 +63,5 @@ void GameScene::Render()
 
 	g_DialogManager->Render() ;
 
-	m_pGuest->Render() ;
+	g_DialogistAniManager->Render() ;
 }

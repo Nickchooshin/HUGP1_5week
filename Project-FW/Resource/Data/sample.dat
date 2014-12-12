@@ -1,12 +1,16 @@
-wait 1.5
-say "driver" "sample_1"
-wait 1.5
-say "guest" "sample_2"
-wait 1
-say "driver" "sample_3"
-wait 3
-say "guest" "sample_4"
+Wait 1.5
+Ani "driver" "talk"
+Say "driver" "sample_1"
+Wait 1.5
+Ani "driver" "drive"
+Say "guest" "sample_2"
+Wait 1
+Ani "driver" "head_turn"
+Say "driver" "sample_3"
+Wait 3
+Ani "driver" "drive"
+Say "guest" "sample_4"
 
-choice 2 "good", "bad" / "sample", "sample_1"
+Choice 2 "good", "bad" / "sample", "sample_1"
 
-load "sample_1"
+Load "sample_1"

@@ -4,17 +4,17 @@
 #include "Dialog.h"
 #include "DialogManager.h"
 
-CScriptCommand_Say::CScriptCommand_Say(char *text, Dialogist dialogist) : m_cText(NULL),
-																		  m_Dialogist(dialogist),
+CScriptCommand_Say::CScriptCommand_Say(Dialogist dialogist, char *text) : m_Dialogist(dialogist),
+																		  m_strText(NULL),
 																		  m_State(DIALOG_FADEOUT)
 {
-	m_cText = new char[strlen(text)+1] ;
-	strcpy(m_cText, text) ;
+	m_strText = new char[strlen(text)+1] ;
+	strcpy(m_strText, text) ;
 }
 CScriptCommand_Say::~CScriptCommand_Say()
 {
-	if(m_cText!=NULL)
-		delete []m_cText ;
+	if(m_strText!=NULL)
+		delete []m_strText ;
 }
 
 void CScriptCommand_Say::Update()
@@ -24,7 +24,7 @@ void CScriptCommand_Say::Update()
 		if( g_DialogManager->DialogFadeOut(m_Dialogist) )
 		{
 			CDialog *pDialog = new CDialog ;
-			pDialog->Init(m_cText, m_Dialogist) ;
+			pDialog->Init(m_strText, m_Dialogist) ;
 			pDialog->SetAlpha(0) ;
 
 			g_DialogManager->ChangeDialog(pDialog) ;

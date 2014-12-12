@@ -81,6 +81,7 @@
     <ClCompile Include="ButtonManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="DialogistAniManager.cpp" />
     <ClCompile Include="Dialog_Choice.cpp" />
     <ClCompile Include="D3dSystem.cpp" />
     <ClCompile Include="Dialog.cpp" />
@@ -98,6 +99,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="ScriptCommand.cpp" />
+    <ClCompile Include="ScriptCommand_Ani.cpp" />
     <ClCompile Include="ScriptCommand_Choice.cpp" />
     <ClCompile Include="ScriptCommand_Load.cpp" />
     <ClCompile Include="ScriptCommand_Say.cpp" />
@@ -114,6 +116,7 @@
     <ClInclude Include="ButtonManager.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="DialogistAniManager.h" />
     <ClInclude Include="Dialog_Choice.h" />
     <ClInclude Include="D3dSystem.h" />
     <ClInclude Include="D3dDevice.h" />
@@ -133,6 +136,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SampleScene.h" />
     <ClInclude Include="ScriptCommand.h" />
+    <ClInclude Include="ScriptCommand_Ani.h" />
     <ClInclude Include="ScriptCommand_Choice.h" />
     <ClInclude Include="ScriptCommand_Load.h" />
     <ClInclude Include="ScriptCommand_Say.h" />

@@ -8,6 +8,7 @@
 #include "ScriptCommand_Say.h"
 #include "ScriptCommand_Choice.h"
 #include "ScriptCommand_Load.h"
+#include "ScriptCommand_Ani.h"
 
 CScriptQueueManager::CScriptQueueManager() : m_pNowCommand(NULL),
 											 m_bQueueEnd(true)
@@ -58,7 +59,7 @@ bool CScriptQueueManager::LoadScript(char *filename)
 			g_LoadManager->GetString(temp) ;
 			strcpy(text, temp) ;
 
-			CScriptCommand *pCommand = new CScriptCommand_Say(text, dialogist) ;
+			CScriptCommand *pCommand = new CScriptCommand_Say(dialogist, text) ;
 			m_CommandQueue.push(pCommand) ;
 		}
 		else if(len==6 && strcmp(command, "CHOICE")==0)
@@ -97,6 +98,19 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		}
 		else if(len==3 && strcmp(command, "ANI")==0)
 		{
+			Dialogist dialogist ;
+
+			g_LoadManager->GetString(temp) ;
+			len = strlen(temp) ;
+			if(len==5 && strcmp(temp, "guest")==0)
+				dialogist = GUEST ;
+			else if(len==6 && strcmp(temp, "driver")==0)
+				dialogist = DRIVER ;
+
+			g_LoadManager->GetString(temp) ;
+
+			CScriptCommand *pCommand = new CScriptCommand_Ani(dialogist, temp) ;
+			m_CommandQueue.push(pCommand) ;
 		}
 		else if(len==5 && strcmp(command, "SOUND")==0)
 		{
