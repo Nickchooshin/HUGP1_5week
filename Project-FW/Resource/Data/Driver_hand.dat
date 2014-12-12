@@ -1,0 +1,36 @@
+<image>
+"Resource/Image/Driver/Chr_hand.png"
+
+<size>
+290, 310
+
+<start_state>
+"drive"
+
+# State Drive
+<state_index>
+"drive", 0, 0
+
+<state_frame>
+"drive", 9
+
+# State Talk
+<state_index>
+"talk", 0, 0
+
+<state_frame>
+"talk", 9
+
+# State Head_Turn
+<state_index>
+"head_turn", 8, 1
+
+<state_frame>
+"head_turn", 1
+
+# State Exit
+<state_index>
+"exit", 8, 1
+
+<state_frame>
+"exit", 1

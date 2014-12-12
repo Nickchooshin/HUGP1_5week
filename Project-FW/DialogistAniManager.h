@@ -8,7 +8,8 @@ class CObjects_Ani ;
 class CDialogistAniManager : public Singleton<CDialogistAniManager>
 {
 private :
-	CObjects_Ani *m_pDriver, *m_pGuest ;
+	CObjects_Ani *m_pDriver, *m_pDriverHand ;
+	CObjects_Ani *m_pGuest ;
 
 public :
 	CDialogistAniManager() ;
