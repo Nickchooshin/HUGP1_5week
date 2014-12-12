@@ -33,12 +33,65 @@ const bool LoadManager::CloseDat()
 	return true ;
 }
 
-const bool LoadManager::GetCommand(char *command)
+const bool LoadManager::GetItem(char *item)
 {
 	std::string data="" ;
 	char key=NULL ;
 	bool comment=false ;
 	bool bracket=false ;
+
+	while(1)
+	{
+		key = fgetc(m_File) ;
+		if(key==EOF)
+			break ;
+
+		if(comment)
+		{
+			if(key==10)
+				comment = false ;
+		}
+		else if(key=='#')
+		{
+			comment = true ;
+		}
+		else if(key==10 || key==' ')
+		{
+			continue ;
+		}
+		else
+		{
+			if(!bracket && key=='<')
+			{
+				bracket = true ;
+			}
+			else if(bracket)
+			{
+				if(key=='>')
+					break ;
+
+				if(key>='a' && key<='z')
+					key -= 32 ;
+
+				char temp[] = { key, NULL } ;
+				data.append(temp) ;
+			}
+		}
+	}
+
+	if(key==EOF)
+		return false ;
+
+	strcpy(item, data.c_str()) ;
+
+	return true ;
+}
+
+const bool LoadManager::GetCommand(char *command)
+{
+	std::string data="" ;
+	char key=NULL ;
+	bool comment=false ;
 
 	while(1)
 	{
@@ -141,7 +194,7 @@ void LoadManager::GetValue(int &value)
 		if(key==EOF)
 			break ;
 
-		if(blank && (key!=10 || key!=' ' || key==','))
+		if(blank && (key!=10 && key!=' ' && key!=','))
 			blank = false ;
 
 		if(!blank)
@@ -172,7 +225,7 @@ void LoadManager::GetValue(float &value)
 		if(key==EOF)
 			break ;
 
-		if(blank && (key!=10 || key!=' ' || key==','))
+		if(blank && (key!=10 && key!=' ' && key!=','))
 			blank = false ;
 
 		if(!blank)

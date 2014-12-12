@@ -87,6 +87,9 @@
     <ClCompile Include="Button.cpp">
       <Filter>Button</Filter>
     </ClCompile>
+    <ClCompile Include="Objects_Ani.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -183,6 +186,9 @@
     </ClInclude>
     <ClInclude Include="Dialog_Choice.h">
       <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects_Ani.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

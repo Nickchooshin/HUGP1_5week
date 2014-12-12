@@ -1,0 +1,29 @@
+<image>
+"Resource/Image/NPC/npc_body1.png"
+
+<size>
+230, 400
+
+<start_state>
+"wtf"
+
+# State Normal
+<state_index>
+"normal", 0, 0
+
+<state_frame>
+"normal", 1
+
+# State Action
+<state_index>
+"action", 1, 0
+
+<state_frame>
+"action", 4
+
+# State WTF
+<state_index>
+"wtf", 0, 1
+
+<state_frame>
+"wtf", 5
