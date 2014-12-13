@@ -19,6 +19,7 @@ public :
 	bool DialogFadeIn(Dialogist dialogist) ;
 
 	void ChangeDialog(IDialog *dialog) ;
+	void DeleteDialog(Dialogist dialogist) ;
 
 	void Render() ;
 } ;

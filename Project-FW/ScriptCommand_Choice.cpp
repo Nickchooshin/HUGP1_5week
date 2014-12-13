@@ -93,6 +93,7 @@ void CScriptCommand_Choice::Update()
 				g_ScriptQueueManager->LoadScript(scriptpath) ;
 			}
 
+			g_DialogManager->DeleteDialog(DRIVER) ;
 			m_bLife = false ;
 		}
 	}

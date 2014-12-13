@@ -81,6 +81,19 @@ void CDialogManager::ChangeDialog(IDialog *dialog)
 	(*pDialog) = dialog ;
 }
 
+void CDialogManager::DeleteDialog(Dialogist dialogist)
+{
+	IDialog **pDialog ;
+
+	if(dialogist==GUEST)
+		pDialog = &m_pGuest ;
+	else if(dialogist==DRIVER)
+		pDialog = &m_pDriver ;
+
+	delete (*pDialog) ;
+	(*pDialog) = NULL ;
+}
+
 void CDialogManager::Render()
 {
 	if(m_pGuest!=NULL)
