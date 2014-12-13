@@ -19,5 +19,7 @@ public :
 
 	void SetAlpha(float fAlpha) ;
 
+	const int Choice() const ;
+
 	void Render() ;
 } ;

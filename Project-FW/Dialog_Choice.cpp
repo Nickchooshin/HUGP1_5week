@@ -60,6 +60,19 @@ void CDialog_Choice::SetAlpha(float fAlpha)
 	}
 }
 
+const int CDialog_Choice::Choice() const
+{
+	int i ;
+
+	for(i=0; i<m_nNum; i++)
+	{
+		if(m_pDialog[i]->BeClick())
+			return i ;
+	}
+
+	return -1 ;
+}
+
 void CDialog_Choice::Render()
 {
 	for(int i=0; i<m_nNum; i++)

@@ -53,8 +53,8 @@ private :
 	std::map<std::string, Position> m_StateIndex ;
 
 	float m_fAnimationTime ;
-
 	std::string m_State, m_prevState ;
+	bool m_bAnimationEnd ;
 
 public :
 	CObjects_Ani() ;
@@ -64,6 +64,8 @@ public :
 	void Init(char *filepath) ;
 
 	void SetAnimation(char *state) ;
+
+	const bool AnimationEnd() const ;
 
 	void Update() ;
 private :

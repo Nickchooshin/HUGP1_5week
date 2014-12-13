@@ -10,6 +10,7 @@
 #include "ScriptCommand_Load.h"
 #include "ScriptCommand_Ani.h"
 #include "ScriptCommand_Sound.h"
+#include "ScriptCommand_Guest.h"
 
 CScriptQueueManager::CScriptQueueManager() : m_pNowCommand(NULL),
 											 m_bQueueEnd(true)
@@ -115,7 +116,7 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		else if(len==5 && strcmp(command, "SOUND")==0)
 		{
 			int channel ;
-			char filepath[100] ;
+			char sound[100] ;
 			bool stream, loop ;
 
 			g_LoadManager->GetCommand(command) ;
@@ -125,7 +126,7 @@ bool CScriptQueueManager::LoadScript(char *filename)
 
 			if(strcmp(command, "PLAY")==0)
 			{
-				g_LoadManager->GetString(filepath) ;
+				g_LoadManager->GetString(sound) ;
 
 				g_LoadManager->GetString(temp) ;
 				len = strlen(temp) ;
@@ -141,7 +142,7 @@ bool CScriptQueueManager::LoadScript(char *filename)
 				else if(len==8 && strcmp(temp, "NON_LOOP")==0)
 					loop = false ;
 
-				pCommand = new CScriptCommand_Sound(channel, filepath, stream, loop) ;
+				pCommand = new CScriptCommand_Sound(channel, sound, stream, loop) ;
 			}
 			else if(strcmp(command, "STOP")==0)
 			{
@@ -152,6 +153,24 @@ bool CScriptQueueManager::LoadScript(char *filename)
 		}
 		else if(len==5 && strcmp(command, "RADIO")==0)
 		{
+		}
+		else if(len==5 && strcmp(command, "GUEST")==0)
+		{
+			g_LoadManager->GetCommand(command) ;
+			
+			CScriptCommand *pCommand ;
+
+			if(strcmp(command, "GET_ON")==0)
+			{
+				g_LoadManager->GetString(temp) ;
+				pCommand = new CScriptCommand_Guest(temp) ;
+			}
+			else if(strcmp(command, "GET_OFF")==0)
+			{
+				pCommand = new CScriptCommand_Guest() ;
+			}
+
+			m_CommandQueue.push(pCommand) ;
 		}
 	}
 

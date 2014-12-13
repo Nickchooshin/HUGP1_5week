@@ -8,6 +8,7 @@
 #include "UISprite.h"
 #include "CameraManager.h"
 #include "MusicManager.h"
+#include "ButtonManager.h"
 
 #include "D3dDevice.h"
 
@@ -38,7 +39,7 @@ void GameScene::Init()
 	float fWinWidth = g_D3dDevice->GetWinWidth() ;
 	float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
-	g_ScriptQueueManager->LoadScript("Resource/Data/sample.dat") ;
+	g_ScriptQueueManager->LoadScript("Resource/Data/Script/sample.dat") ;
 }
 
 void GameScene::Destroy()
@@ -52,16 +53,18 @@ void GameScene::Update(float dt)
 	g_Joystick->Update() ;
 	g_MusicManager->Loop() ;
 
-	g_ScriptQueueManager->Update() ;
+	g_ButtonManager->Update() ;
 
 	g_DialogistAniManager->Update() ;
+
+	g_ScriptQueueManager->Update() ;
 }
 
 void GameScene::Render()
 {
 	g_CameraManager->CameraRun() ;
 
-	g_DialogManager->Render() ;
-
 	g_DialogistAniManager->Render() ;
+
+	g_DialogManager->Render() ;
 }

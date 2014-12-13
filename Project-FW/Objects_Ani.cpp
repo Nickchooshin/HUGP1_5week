@@ -7,7 +7,8 @@
 CObjects_Ani::CObjects_Ani() : m_ImgSize(0, 0),
 							   m_nNowFrame(0),
 							   m_fAnimationTime(0.0f),
-							   m_State(""), m_prevState("")
+							   m_State(""), m_prevState(""),
+							   m_bAnimationEnd(false)
 {
 }
 CObjects_Ani::~CObjects_Ani()
@@ -78,6 +79,11 @@ void CObjects_Ani::SetAnimation(char *state)
 	m_State = state ;
 }
 
+const bool CObjects_Ani::AnimationEnd() const
+{
+	return m_bAnimationEnd ;
+}
+
 void CObjects_Ani::Update()
 {
 	Animation() ;
@@ -85,6 +91,8 @@ void CObjects_Ani::Update()
 
 void CObjects_Ani::Animation()
 {
+	m_bAnimationEnd = false ;
+
 	// Animatiuon Frame, Index
 	int MaxFrame ;
 	Position Index ;
@@ -106,6 +114,8 @@ void CObjects_Ani::Animation()
 		int Frame = (int)(m_fAnimationTime / 0.2f) ;
 		m_fAnimationTime -= Frame * 0.2f ;
 		m_nNowFrame += Frame ;
+		if(m_nNowFrame>=MaxFrame-1)
+			m_bAnimationEnd = true ;
 		m_nNowFrame %= MaxFrame ;
 
 		float left, top, right, bottom ;

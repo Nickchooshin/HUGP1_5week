@@ -15,6 +15,7 @@ public :
 	virtual void Init() = 0 ;
 
 	virtual void SetPosition(float fX, float fY) ;
+	virtual void SetAlpha(int nAlpha) ;
 
 	const float GetPositionX() const ;
 	const float GetPositionY() const ;

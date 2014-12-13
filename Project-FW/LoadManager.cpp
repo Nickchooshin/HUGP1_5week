@@ -79,7 +79,7 @@ const bool LoadManager::GetItem(char *item)
 		}
 	}
 
-	if(key==EOF)
+	if(key==EOF && data.empty())
 		return false ;
 
 	strcpy(item, data.c_str()) ;
@@ -125,7 +125,7 @@ const bool LoadManager::GetCommand(char *command)
 		}
 	}
 
-	if(key==EOF)
+	if(key==EOF && data.empty())
 		return false ;
 
 	strcpy(command, data.c_str()) ;

@@ -1,0 +1,28 @@
+Sound play 0, "BGM-01", "stream", "loop"
+
+Wait 1.5
+Guest get_on "npc_body1"
+
+Say "driver", "temp/sample_1"
+Ani "driver", "talk"
+Wait 1.5
+
+Ani "driver", "drive"
+Say "guest", "temp/sample_2"
+Ani "guest", "talk"
+Wait 1
+
+Ani "guest", "normal"
+Say "driver", "temp/sample_3"
+Ani "driver", "head_turn"
+Wait 3
+
+Ani "driver", "drive"
+Say "guest", "temp/sample_4"
+Ani "guest", "talk"
+Wait 1.5
+
+Ani "guest", "normal"
+Choice 2 "temp/good", "temp/bad" / "sample", "sample_1"
+
+Guest get_off

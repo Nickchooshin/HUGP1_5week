@@ -60,23 +60,11 @@
     <ClCompile Include="ScriptCommand.cpp">
       <Filter>ScriptCommand</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptCommand_Wait.cpp">
-      <Filter>ScriptCommand</Filter>
-    </ClCompile>
     <ClCompile Include="Dialog.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptCommand_Say.cpp">
-      <Filter>ScriptCommand</Filter>
-    </ClCompile>
     <ClCompile Include="DialogManager.cpp">
       <Filter>Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptCommand_Load.cpp">
-      <Filter>ScriptCommand</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptCommand_Choice.cpp">
-      <Filter>ScriptCommand</Filter>
     </ClCompile>
     <ClCompile Include="ButtonManager.cpp">
       <Filter>Button</Filter>
@@ -93,11 +81,26 @@
     <ClCompile Include="DialogistAniManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptCommand_Ani.cpp">
-      <Filter>ScriptCommand</Filter>
+    <ClCompile Include="ScriptCommand_Wait.cpp">
+      <Filter>ScriptCommand\Wait</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Say.cpp">
+      <Filter>ScriptCommand\Say</Filter>
     </ClCompile>
     <ClCompile Include="ScriptCommand_Sound.cpp">
-      <Filter>ScriptCommand</Filter>
+      <Filter>ScriptCommand\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Load.cpp">
+      <Filter>ScriptCommand\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Ani.cpp">
+      <Filter>ScriptCommand\Ani</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Choice.cpp">
+      <Filter>ScriptCommand\Choice</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommand_Guest.cpp">
+      <Filter>ScriptCommand\Guest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,26 +169,14 @@
     <ClInclude Include="ScriptCommand.h">
       <Filter>ScriptCommand</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptCommand_Wait.h">
-      <Filter>ScriptCommand</Filter>
-    </ClInclude>
     <ClInclude Include="Dialog.h">
       <Filter>Dialog</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptCommand_Say.h">
-      <Filter>ScriptCommand</Filter>
     </ClInclude>
     <ClInclude Include="DialogManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="Dialogist.h">
       <Filter>Dialog</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptCommand_Load.h">
-      <Filter>ScriptCommand</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptCommand_Choice.h">
-      <Filter>ScriptCommand</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Button</Filter>
@@ -202,11 +193,26 @@
     <ClInclude Include="DialogistAniManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptCommand_Ani.h">
-      <Filter>ScriptCommand</Filter>
+    <ClInclude Include="ScriptCommand_Wait.h">
+      <Filter>ScriptCommand\Wait</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Say.h">
+      <Filter>ScriptCommand\Say</Filter>
     </ClInclude>
     <ClInclude Include="ScriptCommand_Sound.h">
-      <Filter>ScriptCommand</Filter>
+      <Filter>ScriptCommand\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Load.h">
+      <Filter>ScriptCommand\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Ani.h">
+      <Filter>ScriptCommand\Ani</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Choice.h">
+      <Filter>ScriptCommand\Choice</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Guest.h">
+      <Filter>ScriptCommand\Guest</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +263,27 @@
     </Filter>
     <Filter Include="Button">
       <UniqueIdentifier>{d328b188-2be0-4e65-abf1-0dbc34f5f203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Wait">
+      <UniqueIdentifier>{e89411bc-9ba1-4861-97a9-4e72b0238b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Say">
+      <UniqueIdentifier>{a0756e4d-451f-4f59-9a5b-57a315e5d362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Sound">
+      <UniqueIdentifier>{34a4ed29-e691-4a56-b56e-4fb265ee4b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Load">
+      <UniqueIdentifier>{33a869c4-a8cf-47af-976d-827219e88ce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Ani">
+      <UniqueIdentifier>{cc690e12-f163-4fe6-90ae-afa9d49de87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Choice">
+      <UniqueIdentifier>{fe63621b-e05a-459f-b6c3-cc7ca03c041b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Guest">
+      <UniqueIdentifier>{c0976942-c6c9-4180-bb2c-a23ae5264a97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

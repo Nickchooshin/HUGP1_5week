@@ -19,7 +19,7 @@ void CScriptCommand_Load::Update()
 {
 	char scriptpath[100] ;
 
-	wsprintf(scriptpath, "Resource/Data/%s.dat", m_strScript) ;
+	wsprintf(scriptpath, "Resource/Data/Script/%s.dat", m_strScript) ;
 
 	g_ScriptQueueManager->ClearQueue() ;
 	g_ScriptQueueManager->LoadScript(scriptpath) ;

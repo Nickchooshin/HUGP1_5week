@@ -4,18 +4,28 @@
 #include "Dialogist.h"
 
 class CObjects_Ani ;
+class CSprite ;
 
 class CDialogistAniManager : public Singleton<CDialogistAniManager>
 {
 private :
 	CObjects_Ani *m_pDriver, *m_pDriverHand ;
-	CObjects_Ani *m_pGuest ;
+	CObjects_Ani *m_pGuest, *m_pGuestMove ;
+	CSprite *m_pFront, *m_pSeatB, *m_pSeatF, *m_pLamp ;
+
+	int m_nAniState ;
+	float m_fAnimationTime ;
+	bool m_bGuestMove ;
 
 public :
 	CDialogistAniManager() ;
 	~CDialogistAniManager() ;
 
 	void SetAnimation(Dialogist dialogist, char *state) ;
+	void GuestGetOn(CObjects_Ani *pGuest) ;
+	void GuestGetOff() ;
+	bool SitDown() ;
+	bool SitUp() ;
 
 	void Update() ;
 

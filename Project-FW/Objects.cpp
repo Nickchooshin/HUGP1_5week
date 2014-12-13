@@ -17,6 +17,11 @@ void CObjects::SetPosition(float fX, float fY)
 	m_fY = fY ;
 }
 
+void CObjects::SetAlpha(int nAlpha)
+{
+	m_pSprite->SetAlpha(nAlpha) ;
+}
+
 const float CObjects::GetPositionX() const
 {
 	return m_fX ;
