@@ -6,11 +6,11 @@ CDialogistAniManager::CDialogistAniManager() : m_pDriver(NULL), m_pDriverHand(NU
 {
 	m_pDriver = new CObjects_Ani ;
 	m_pDriver->Init("Resource/Data/Driver.dat") ;
-	m_pDriver->SetPosition(420.0f, 500.0f) ;
+	m_pDriver->SetPosition(460.0f, 480.0f) ;
 
 	m_pDriverHand = new CObjects_Ani ;
 	m_pDriverHand->Init("Resource/Data/Driver_hand.dat") ;
-	m_pDriverHand->SetPosition(420.0f, 400.0f) ;
+	m_pDriverHand->SetPosition(460.0f, 480.0f) ;
 }
 CDialogistAniManager::~CDialogistAniManager()
 {

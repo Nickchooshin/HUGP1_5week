@@ -96,6 +96,9 @@
     <ClCompile Include="ScriptCommand_Ani.cpp">
       <Filter>ScriptCommand</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptCommand_Sound.cpp">
+      <Filter>ScriptCommand</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -200,6 +203,9 @@
       <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="ScriptCommand_Ani.h">
+      <Filter>ScriptCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommand_Sound.h">
       <Filter>ScriptCommand</Filter>
     </ClInclude>
   </ItemGroup>

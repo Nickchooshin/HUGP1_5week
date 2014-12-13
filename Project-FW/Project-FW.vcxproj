@@ -103,6 +103,7 @@
     <ClCompile Include="ScriptCommand_Choice.cpp" />
     <ClCompile Include="ScriptCommand_Load.cpp" />
     <ClCompile Include="ScriptCommand_Say.cpp" />
+    <ClCompile Include="ScriptCommand_Sound.cpp" />
     <ClCompile Include="ScriptCommand_Wait.cpp" />
     <ClCompile Include="ScriptQueueManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="ScriptCommand_Choice.h" />
     <ClInclude Include="ScriptCommand_Load.h" />
     <ClInclude Include="ScriptCommand_Say.h" />
+    <ClInclude Include="ScriptCommand_Sound.h" />
     <ClInclude Include="ScriptCommand_Wait.h" />
     <ClInclude Include="ScriptQueueManager.h" />
     <ClInclude Include="Singleton.h" />

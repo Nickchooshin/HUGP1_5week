@@ -1,5 +1,5 @@
 <image>
-"Resource/Image/NPC/npc_body1.png"
+"Resource/Image/NPC/npc_body4.png"
 
 <size>
 230, 400
@@ -12,11 +12,11 @@
 "normal", 0, 0
 
 <state_frame>
-"normal", 5
+"normal", 6
 
 # State Talk
 <state_index>
 "talk", 0, 1
 
 <state_frame>
-"talk", 5
+"talk", 6
