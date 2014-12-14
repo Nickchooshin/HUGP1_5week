@@ -187,6 +187,11 @@ bool CScriptQueueManager::LoadScript(char *filename)
 	return true ;
 }
 
+const bool CScriptQueueManager::BeQueueEnd() const
+{
+	return m_bQueueEnd ;
+}
+
 void CScriptQueueManager::ClearQueue()
 {
 	CScriptCommand *temp ;

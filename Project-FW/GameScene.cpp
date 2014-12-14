@@ -1,4 +1,6 @@
 #include "GameScene.h"
+#include "EndingScene.h"
+#include "SceneManager.h"
 
 #include "Keyboard.h"
 #include "Mouse.h"
@@ -58,6 +60,14 @@ void GameScene::Update(float dt)
 	g_DialogistAniManager->Update() ;
 
 	g_ScriptQueueManager->Update() ;
+
+	if(g_ScriptQueueManager->BeQueueEnd())
+	{
+		for(int i=0; i<32; i++)
+			g_MusicManager->StopMusic(i) ;
+		g_SceneManager->ChangeScene(EndingScene::scene()) ;
+		return ;
+	}
 }
 
 void GameScene::Render()

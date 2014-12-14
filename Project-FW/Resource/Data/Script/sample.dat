@@ -1,5 +1,3 @@
-Sound play 0, "BGM-01", "stream", "loop"
-
 Wait 1.5
 Guest get_on "npc_body1"
 

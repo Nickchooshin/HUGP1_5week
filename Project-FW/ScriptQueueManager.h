@@ -18,6 +18,8 @@ public :
 
 	bool LoadScript(char *filename) ;
 
+	const bool BeQueueEnd() const ;
+
 	void ClearQueue() ;
 
 	void Update() ;

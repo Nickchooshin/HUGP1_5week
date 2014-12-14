@@ -105,6 +105,9 @@
     <ClCompile Include="ScriptCommand_Radio.cpp">
       <Filter>ScriptCommand\Radio</Filter>
     </ClCompile>
+    <ClCompile Include="EndingScene.cpp">
+      <Filter>Scene\EndingScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -220,6 +223,9 @@
     <ClInclude Include="ScriptCommand_Radio.h">
       <Filter>ScriptCommand\Radio</Filter>
     </ClInclude>
+    <ClInclude Include="EndingScene.h">
+      <Filter>Scene\EndingScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -293,6 +299,9 @@
     </Filter>
     <Filter Include="ScriptCommand\Radio">
       <UniqueIdentifier>{00c0b71f-3ff2-4729-94f9-4fdeff0e7fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\EndingScene">
+      <UniqueIdentifier>{acf46d88-e610-4f9a-8570-45764deb0259}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

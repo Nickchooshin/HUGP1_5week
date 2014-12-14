@@ -271,7 +271,7 @@ void CDialogistAniManager::Render()
 	m_pDriverHand->Render() ;
 
 	m_pFront->Render() ;
-	m_pLamp->Render() ;
+	//m_pLamp->Render() ;
 
 	m_pLineU->Render() ;
 	m_pLineD->Render() ;

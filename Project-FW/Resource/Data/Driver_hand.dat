@@ -34,3 +34,10 @@
 
 <state_frame>
 "exit", 1
+
+# State None
+<state_index>
+"none", 8, 1
+
+<state_frame>
+"none", 1

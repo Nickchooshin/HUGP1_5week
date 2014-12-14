@@ -1,6 +1,8 @@
 #include "Dialog.h"
 #include "Sprite.h"
 
+#include "D3dDevice.h"
+
 CDialog::CDialog() : m_pDialog(NULL)
 {
 }
@@ -12,6 +14,9 @@ CDialog::~CDialog()
 
 void CDialog::Init(char *text, Dialogist dialogist)
 {
+	float WinWidthHalf = g_D3dDevice->GetWinWidth() / 2.0f ;
+	float WinHeight = g_D3dDevice->GetWinHeight() ;
+
 	char filename[100] ;
 	wsprintf(filename, "Resource/Image/%s.png", text) ;
 
@@ -23,11 +28,11 @@ void CDialog::Init(char *text, Dialogist dialogist)
 	switch(m_Dialogist)
 	{
 	case GUEST :
-		m_pDialog->SetPosition(100.0f, 100.0f) ;
+		m_pDialog->SetPosition(WinWidthHalf, WinHeight - 330.0f) ;
 		break ;
 
 	case DRIVER :
-		m_pDialog->SetPosition(200.0f, 200.0f) ;
+		m_pDialog->SetPosition(WinWidthHalf, WinHeight - 500.0f) ;
 		break ;
 	}
 }

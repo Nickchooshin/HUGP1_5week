@@ -4,6 +4,8 @@
 
 #include <Windows.h>
 
+#include "D3dDevice.h"
+
 CDialog_Choice::CDialog_Choice() : m_nNum(0),
 								   m_pDialog(NULL)
 {
@@ -43,6 +45,8 @@ void CDialog_Choice::Init(int num, char **text)
 void CDialog_Choice::SetAlpha(float fAlpha)
 {
 	int i ;
+	float x = (g_D3dDevice->GetWinWidth() / 2.0f) + 100.0f ;
+	float y = g_D3dDevice->GetWinHeight() - 500.0f ;
 	float fAngle ;
 	int nAlpha ;
 	const float radius = 100.0f ;
@@ -51,7 +55,7 @@ void CDialog_Choice::SetAlpha(float fAlpha)
 	for(i=0; i<m_nNum; i++)
 	{
 		fAngle = (225.0f + ((i * -45.0f) * fAlpha)) * 3.141592f / 180.0f ;
-		m_pDialog[i]->SetPosition(270.7f + (cos(fAngle) * radius), 270.7f + (sin(fAngle) * radius)) ;
+		m_pDialog[i]->SetPosition(x + (cos(fAngle) * radius), y + (sin(fAngle) * radius)) ;
 
 		nAlpha = (int)(255.0f * fAlpha) ;
 		m_pDialog[i]->SetAlpha(nAlpha) ;

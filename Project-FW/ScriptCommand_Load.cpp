@@ -21,7 +21,7 @@ void CScriptCommand_Load::Update()
 
 	wsprintf(scriptpath, "Resource/Data/Script/%s.dat", m_strScript) ;
 
-	g_ScriptQueueManager->ClearQueue() ;
+	//g_ScriptQueueManager->ClearQueue() ;
 	g_ScriptQueueManager->LoadScript(scriptpath) ;
 
 	m_bLife = false ;

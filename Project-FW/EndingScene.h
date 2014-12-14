@@ -4,13 +4,12 @@
 #include <fmod.hpp>
 
 class CSprite ;
-class CButton ;
 
-class TitleScene : public Scene
+class EndingScene : public Scene
 {
 private :
-	CSprite *m_pTitle ;
-	CButton *m_pStart, *m_pExit ;
+	CSprite *m_pCredit ;
+	CSprite *m_pBlack, *m_pBlack2 ;
 	FMOD::Sound *m_pBGM ;
 
 	int m_nState ;
@@ -19,8 +18,8 @@ private :
 public :
 	static Scene* scene() ;
 
-	TitleScene() ;
-	virtual ~TitleScene() ;
+	EndingScene() ;
+	virtual ~EndingScene() ;
 
 	void Init() ;
 	void Destroy() ;

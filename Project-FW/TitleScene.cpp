@@ -20,6 +20,7 @@
 
 TitleScene::TitleScene() : m_pTitle(NULL),
 						   m_pStart(NULL), m_pExit(NULL),
+						   m_pBGM(NULL),
 						   m_nState(0),
 						   m_fTime(0.0f)
 {
@@ -57,14 +58,21 @@ void TitleScene::Init()
 	m_pStart->SetPosition(160.0f, fWinHeight - 500.0f) ;
 	m_pStart->SetIndex(0, 1, 0, 0) ;
 	m_pStart->SetPutonActivate(true) ;
+	m_pStart->SetPutonSound("Resource/Sound/SE-button.mp3") ;
+	m_pStart->SetClickDownSound("Resource/Sound/SE-select.mp3") ;
 	g_ButtonManager->AddButton(m_pStart) ;
 
 	m_pExit = new CButton ;
 	m_pExit->Init(180.0f, 40.0f, "Resource/Image/Title/Title_btn2.png") ;
-	m_pExit->SetPosition(160.0f, fWinHeight - 640.0f) ;
+	m_pExit->SetPosition(160.0f, fWinHeight - 560.0f) ;
 	m_pExit->SetIndex(0, 1, 0, 0) ;
 	m_pExit->SetPutonActivate(true) ;
+	m_pExit->SetPutonSound("Resource/Sound/SE-button.mp3") ;
+	m_pExit->SetClickDownSound("Resource/Sound/SE-select.mp3") ;
 	g_ButtonManager->AddButton(m_pExit) ;
+
+	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-01.mp3", true, true) ;
+	g_MusicManager->PlayMusic(m_pBGM, 0) ;
 }
 
 void TitleScene::Destroy()
@@ -87,6 +95,7 @@ void TitleScene::Update(float dt)
 		if(m_pStart->BeClick())
 		{
 			m_nState = 1 ;
+			g_MusicManager->StopMusic(0) ;
 		}
 		else if(m_pExit->BeClick())
 		{
@@ -101,15 +110,17 @@ void TitleScene::Update(float dt)
 			g_SceneManager->ChangeScene(GameScene::scene()) ;
 			return ;
 		}
+		else
+		{
+			float fPercent = (m_fTime / 3.0f) ;
+			int nAlpha = 255 - (int)(255.0f * fPercent) ;
+			m_pTitle->SetAlpha(nAlpha) ;
+			m_pStart->SetAlpha(nAlpha) ;
+			m_pExit->SetAlpha(nAlpha) ;
+			g_DialogistAniManager->LineMove(fPercent) ;
 
-		float fPercent = (m_fTime / 3.0f) ;
-		int nAlpha = 255 - (int)(255.0f * fPercent) ;
-		m_pTitle->SetAlpha(nAlpha) ;
-		m_pStart->SetAlpha(nAlpha) ;
-		m_pExit->SetAlpha(nAlpha) ;
-		g_DialogistAniManager->LineMove(fPercent) ;
-
-		m_fTime += g_D3dDevice->GetTime() ;
+			m_fTime += g_D3dDevice->GetTime() ;
+		}
 	}
 }
 
