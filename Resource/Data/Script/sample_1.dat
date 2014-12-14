@@ -1,0 +1,8 @@
+wait 1.5
+say "driver" "temp/sample_2"
+wait 1.5
+say "guest" "temp/sample_1"
+wait 1
+say "driver" "temp/sample_4"
+wait 3
+say "guest" "temp/sample_3"

@@ -1,0 +1,43 @@
+<image>
+"Resource/Image/NPC/npc_aboarding.png"
+
+<size>
+258, 380
+
+<start_state>
+"get_on"
+
+# State Get_on
+<state_index>
+"get_on", 0, 0
+
+<state_frame>
+"get_on", 6
+
+# State Sit_down
+<state_index>
+"sit_down", 0, 1
+
+<state_frame>
+"sit_down", 5
+
+# State Sit
+<state_index>
+"sit", 4, 1
+
+<state_frame>
+"sit", 1
+
+# State Sit_up
+<state_index>
+"sit_up", 0, 3
+
+<state_frame>
+"sit_up", 5
+
+# State Get_off
+<state_index>
+"get_off", 0, 2
+
+<state_frame>
+"get_off", 6

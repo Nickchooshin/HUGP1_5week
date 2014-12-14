@@ -1,0 +1,43 @@
+<image>
+"Resource/Image/Driver/Chr_body.png"
+
+<size>
+320, 590
+
+<start_state>
+"drive"
+
+# State Drive
+<state_index>
+"drive", 0, 0
+
+<state_frame>
+"drive", 1
+
+# State Talk
+<state_index>
+"talk", 0, 1
+
+<state_frame>
+"talk", 9
+
+# State Head_Turn
+<state_index>
+"head_turn", 0, 2
+
+<state_frame>
+"head_turn", 8
+
+# State Exit
+<state_index>
+"exit", 0, 3
+
+<state_frame>
+"exit", 10
+
+# State None
+<state_index>
+"none", 9, 3
+
+<state_frame>
+"none", 1
