@@ -85,7 +85,11 @@ void EndingScene::Update(float dt)
 
 			m_pBlack->SetAlpha(128) ;
 			g_DialogistAniManager->LineMove(0.0f) ;
+<<<<<<< HEAD
 			g_MusicManager->PlayMusic(m_pBGM, 0) ;
+=======
+			g_MusicManager->PlayMusic(m_pBGM) ;
+>>>>>>> Ending 구현, 임시 Release 버전
 		}
 		else
 		{
