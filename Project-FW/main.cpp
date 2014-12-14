@@ -12,7 +12,7 @@
 
 #include "WinSystem.h"
 #include "SceneManager.h"
-#include "GameScene.h"
+#include "TitleScene.h"
 
 INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 {
@@ -22,9 +22,9 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 #endif
 	CWinSystem WinSystem(hInst) ;
 
-	g_SceneManager->StartScene(GameScene::scene()) ;
+	g_SceneManager->StartScene(TitleScene::scene()) ;
 
-	WinSystem.WinSet("TAXI", WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX, 600, 800) ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
+	WinSystem.WinSet("TAXI - 1.00v", WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX, 600, 700) ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
 	WinSystem.WinMsg() ;
 	WinSystem.WinEnd() ;
 

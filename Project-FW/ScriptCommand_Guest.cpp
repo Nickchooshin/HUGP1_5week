@@ -42,14 +42,14 @@ void CScriptCommand_Guest::Update()
 			m_bGuestInit = true ;
 		}
 
-		if( !g_DialogistAniManager->SitDown() )
+		if( !g_DialogistAniManager->AniSitDown() )
 			return ;
 
 		m_bLife = false ;
 	}
 	else
 	{
-		if( !g_DialogistAniManager->SitUp() )
+		if( !g_DialogistAniManager->AniSitUp() )
 			return ;
 
 		g_DialogistAniManager->GuestGetOff() ;

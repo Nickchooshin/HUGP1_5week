@@ -3,11 +3,16 @@
 #include "Scene.h"
 
 class CSprite ;
+class CButton ;
 
 class TitleScene : public Scene
 {
 private :
-	CSprite *m_pBackground ;
+	CSprite *m_pTitle ;
+	CButton *m_pStart, *m_pExit ;
+
+	int m_nState ;
+	float m_fTime ;
 
 public :
 	static Scene* scene() ;

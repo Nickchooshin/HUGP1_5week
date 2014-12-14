@@ -7,6 +7,7 @@
 CDialogistAniManager::CDialogistAniManager() : m_pDriver(NULL), m_pDriverHand(NULL),
 											   m_pGuest(NULL), m_pGuestMove(NULL),
 											   m_pFront(NULL), m_pSeatB(NULL), m_pSeatF(NULL), m_pLamp(NULL),
+											   m_pLineU(NULL), m_pLineD(NULL),
 											   m_nAniState(0),
 											   m_fAnimationTime(0.0f),
 											   m_bGuestMove(false)
@@ -41,6 +42,14 @@ CDialogistAniManager::CDialogistAniManager() : m_pDriver(NULL), m_pDriverHand(NU
 	m_pLamp = new CSprite ;
 	m_pLamp->Init("Resource/Image/Inside/inside_lamp.png") ;
 	m_pLamp->SetPosition(WinWidthHalf, WinHeight - 285.0f) ;
+
+	m_pLineU = new CSprite ;
+	m_pLineU->Init(600.0f, 50.0f, "Resource/Image/black.png") ;
+	m_pLineU->SetPosition(WinWidthHalf, WinHeight + 25.0f) ;
+
+	m_pLineD = new CSprite ;
+	m_pLineD->Init(600.0f, 50.0f, "Resource/Image/black.png") ;
+	m_pLineD->SetPosition(WinWidthHalf, -25.0f) ;
 }
 CDialogistAniManager::~CDialogistAniManager()
 {
@@ -61,6 +70,11 @@ CDialogistAniManager::~CDialogistAniManager()
 		delete m_pSeatF ;
 	if(m_pLamp!=NULL)
 		delete m_pLamp ;
+
+	if(m_pLineU!=NULL)
+		delete m_pLineU ;
+	if(m_pLineD!=NULL)
+		delete m_pLineD ;
 }
 
 void CDialogistAniManager::SetAnimation(Dialogist dialogist, char *state)
@@ -93,7 +107,7 @@ void CDialogistAniManager::GuestGetOff()
 	m_pGuest = NULL ;
 }
 
-bool CDialogistAniManager::SitDown()
+bool CDialogistAniManager::AniSitDown()
 {
 	if(!m_bGuestMove)
 	{
@@ -158,7 +172,7 @@ bool CDialogistAniManager::SitDown()
 	return false ;
 }
 
-bool CDialogistAniManager::SitUp()
+bool CDialogistAniManager::AniSitUp()
 {
 	if(!m_bGuestMove)
 	{
@@ -223,6 +237,16 @@ bool CDialogistAniManager::SitUp()
 	return false ;
 }
 
+void CDialogistAniManager::LineMove(float fPercent)
+{
+	float WinWidthHalf = g_D3dDevice->GetWinWidth() / 2.0f ;
+	float WinHeight = g_D3dDevice->GetWinHeight() ;
+	float fY = 50.0f * fPercent ;
+
+	m_pLineU->SetPosition(WinWidthHalf, (WinHeight + 25.0f) - fY) ;
+	m_pLineD->SetPosition(WinWidthHalf, -25.0f + fY) ;
+}
+
 void CDialogistAniManager::Update()
 { 
 	if(m_pGuest!=NULL)
@@ -248,4 +272,11 @@ void CDialogistAniManager::Render()
 
 	m_pFront->Render() ;
 	m_pLamp->Render() ;
+
+	m_pLineU->Render() ;
+	m_pLineD->Render() ;
+}
+
+void CDialogistAniManager::Swing()
+{
 }

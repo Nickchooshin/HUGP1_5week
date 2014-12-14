@@ -102,6 +102,9 @@
     <ClCompile Include="ScriptCommand_Guest.cpp">
       <Filter>ScriptCommand\Guest</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptCommand_Radio.cpp">
+      <Filter>ScriptCommand\Radio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -214,6 +217,9 @@
     <ClInclude Include="ScriptCommand_Guest.h">
       <Filter>ScriptCommand\Guest</Filter>
     </ClInclude>
+    <ClInclude Include="ScriptCommand_Radio.h">
+      <Filter>ScriptCommand\Radio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -284,6 +290,9 @@
     </Filter>
     <Filter Include="ScriptCommand\Guest">
       <UniqueIdentifier>{c0976942-c6c9-4180-bb2c-a23ae5264a97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptCommand\Radio">
+      <UniqueIdentifier>{00c0b71f-3ff2-4729-94f9-4fdeff0e7fef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

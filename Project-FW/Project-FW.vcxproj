@@ -106,6 +106,7 @@
     <ClCompile Include="ScriptCommand_Choice.cpp" />
     <ClCompile Include="ScriptCommand_Guest.cpp" />
     <ClCompile Include="ScriptCommand_Load.cpp" />
+    <ClCompile Include="ScriptCommand_Radio.cpp" />
     <ClCompile Include="ScriptCommand_Say.cpp" />
     <ClCompile Include="ScriptCommand_Sound.cpp" />
     <ClCompile Include="ScriptCommand_Wait.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="ScriptCommand_Choice.h" />
     <ClInclude Include="ScriptCommand_Guest.h" />
     <ClInclude Include="ScriptCommand_Load.h" />
+    <ClInclude Include="ScriptCommand_Radio.h" />
     <ClInclude Include="ScriptCommand_Say.h" />
     <ClInclude Include="ScriptCommand_Sound.h" />
     <ClInclude Include="ScriptCommand_Wait.h" />
